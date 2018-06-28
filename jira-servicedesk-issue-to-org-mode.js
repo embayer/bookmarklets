@@ -18,14 +18,16 @@ function popup (elemList) {
   const modalCloseBtn = document.createElement('SPAN');
   modalCloseBtn.innerHTML = '&times;';
   modalCloseBtn.style.cssText = 'cursor: pointer; color: #aaa; float: right; font-size: 28px; font-weight: bold;';
-  modalCloseBtn.onclick = function (event) {document.getElementById('my-unique-modal').remove();}
+  modalCloseBtn.onclick = function (event) {
+    document.getElementById('my-unique-modal').remove();
+  };
 
   const content = document.createElement('DIV');
   elemList.forEach(x => {
     const paragraph = document.createElement('P');
     paragraph.innerText = x;
-    content.appendChild(paragraph)
-  })
+    content.appendChild(paragraph);
+  });
 
   modalContent.appendChild(modalCloseBtn);
   modalContent.appendChild(content);
